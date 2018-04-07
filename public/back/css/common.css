@@ -102,7 +102,7 @@ html{
 .lt_main{
   height: 1000px;
   width: 100%;
-  background-color: pink;
+  /*background-color: pink;*/
   padding-left:180px;
   padding-top: 50px;
   transition: all 1s;
@@ -133,4 +133,9 @@ html{
 }
 .breadcrumb {
   margin-top: 20px;
+}
+.echars-1,
+.echars-2{
+  width: 48%;
+  height: 400px;
 }

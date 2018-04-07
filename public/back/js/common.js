@@ -9,7 +9,28 @@ $(document).ajaxStart(function(){
 });
   $(document).ajaxStart(function(){
     NProgress.done();
-  })
+  });
+
+
+
+  //登陆拦截功能
+  //先判断登陆地址中是否含有login ，如果没有再进行ajax判断
+  if( location.href.indexOf("login") === -1){
+    $.ajax({
+      type:"get",
+      url:"/employee/checkRootLogin",
+      dataType:"json",
+      success:function(info){
+        //console.log(info);
+        if( info.success ){
+          console.log("登陆了");
+        }
+        if( info.error === 400){
+          location.href = "login.html";
+        }
+      }
+    })
+  }
 
 
 });
