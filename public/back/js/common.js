@@ -51,7 +51,7 @@ $(".icon_menu").click(function(){
 });
 
 
-  //模态框
+  //退出功能模态框
 $(".icon_logout").click(function(){
   $('#logoutModal').modal('show')
 });
