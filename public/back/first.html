@@ -50,14 +50,39 @@
     <!--路径导航（面包屑导航）-->
     <ol class="breadcrumb">
       <li><a href="index.html">管理系统</a></li>
-      <li><a href="#">首页</a></li>
+      <li><a href="#">分类管理</a></li>
+      <li><a href="#">一级分类</a></li>
     </ol>
+
+    <div class=" lt_content ">
+      <button class="btn btn-default mb_20" id="addcatg">添加分类</button>
+      <table class="table table-bordered table-hover">
+        <thead>
+        <tr>
+          <th width="20%">序号</th>
+          <th width="80%">一级分类名</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>1</td>
+          <td>
+            户外管
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="text-right">
+    <ul id="paginator"></ul>
   </div>
 </div>
 
 
 
-<!--模态框-->
+<!--退出模态框-->
 <div class="modal fade" id="logoutModal">
   <div class="modal-dialog modal-sm">
     <div class="modal-content">
@@ -77,12 +102,56 @@
 </div>
 
 
+<!--添加管理模态框-->
+<div class="modal fade" id="addc">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" ><span >&times;</span></button>
+        <h4 class="modal-title">温馨提示</h4>
+      </div>
+      <div class="modal-body">
+
+        <form  id="form">
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="请输入一级分类" name="categoryName">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+        <button type="submit" class="btn btn-primary" form="form" >添加</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
 
 <script src="./lib/jquery/jquery.min.js"></script>
 <script src="./lib/bootstrap/js/bootstrap.min.js"></script>
 <script src="./lib/bootstrap-validator/js/bootstrapValidator.min.js"></script>
+<script src="./lib/artTemplate/template-web.js"></script>
 <script src="./lib/nprogress/nprogress.js"></script>
+<script src="./lib/bootstrap-paginator/bootstrap-paginator.js"></script>
 <script src="./js/common.js"></script>
+<script src="./js/first.js"></script>
+
+
+<script type="text/template" id="tmp">
+{{each rows v i}}
+<tr>
+  <td>{{(page-1)*size + i + 1}}</td>
+  <td>{{v.categoryName}}</td>
+</tr>
+  {{/each}}
+
+
+
+</script>
 
 </body>
 </html>

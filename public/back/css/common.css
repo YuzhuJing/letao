@@ -139,7 +139,9 @@ html{
   width: 48%;
   height: 400px;
 }
-
+.mb_20{
+  margin-bottom: 20px;
+}
 /*user*/
 .table.table-bordered th,
 .table.table-bordered td {
